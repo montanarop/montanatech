@@ -1,0 +1,90 @@
+/* General Styles */
+body {
+     font-family: Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+     background-color: #f0f0f0;
+}
+
+/* Header */
+header {
+     background-color: #4CAF50;
+     color: white;
+     padding: 1em;
+     text-align: center;
+}
+
+.header-container {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.logo {
+     width: 100px;
+     height: 60px;
+     margin-right: 140px;
+}
+
+.subtitle {
+     font-size: 16px;
+     font-style: italic;
+     margin-top: 5px;
+}
+
+/* Main Content */
+main {
+     padding: 2em;
+}
+
+/* Announcements */
+#announcements {
+     background-color: #fff8c4;
+     padding: 1em;
+     margin: 1em 0;
+     border-radius: 5px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     text-align: center;
+}
+
+/* Package Sections */
+.package {
+     background-color: white;
+     padding: 1em;
+     margin: 1em 0;
+     border-radius: 5px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+button {
+     background-color: #4CAF50;
+     color: white;
+     border: none;
+     padding: 0.5em 1em;
+     cursor: pointer;
+     border-radius: 5px;
+}
+
+button:hover {
+     background-color: #45a049;
+}
+
+/* Contacts Section */
+#contacts {
+     background-color: white;
+     padding: 1em;
+     margin: 2em 0;
+     border-radius: 5px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     text-align: center;
+}
+
+#contacts a {
+     color: #4CAF50;
+     text-decoration: none;
+}
+
+#contacts a:hover {
+     text-decoration: underline;
+}

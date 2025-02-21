@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Montana Tech Bingwa Services</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <header>
+          <div class="header-container">
+               <img src="saf logo.jpg" alt="Montana Tech Logo" class="logo">
+               <div>
+                    <h1>Montana Tech Bingwa Services</h1>
+                    <p class="subtitle">Pata Offer Hata Hukiwa na Okoa</p>
+               </div>
+          </div>
+     </header>
+     <main>
+          <section id="announcements">
+               <h2>Announcements</h2>
+               <p>🎉 Enjoy our new amazing data offers and SMS bundles!</p>
+               <p>⚡ Limited-time deals available daily, don't miss out.</p>
+               <p>💡 Stay connected with our affordable packages anytime.</p>
+          </section>
+          
+          <section id="bundles">
+               <h2>Bundles (Purchase only once per day)</h2>
+               <div class="package">
+                    <p>1GB for Ksh 19 (1hr)</p>
+                    <button onclick="promptNumberAndBuy('1GB', 19)">Select</button>
+                    <p>1GB + 1GB Free for Ksh 25 (1hr)</p>
+                    <button onclick="promptNumberAndBuy('1GB + 1GB', 25)">Select</button>
+                    <p>350MB for Ksh 49 (7day)</p>
+                    <button onclick="promptNumberAndBuy('350MB', 49)">Select</button>
+                    <p>1.5GB for Ksh 50 (3hr)</p>
+                    <button onclick="promptNumberAndBuy('1.5GB', 50)">Select</button>
+                    <p>1.25GB for Ksh 55 (Till midnight)</p>
+                    <button onclick="promptNumberAndBuy('1.25GB', 55)">Select</button>
+                    <p>1GB for Ksh 99 (24hr)</p>
+                    <button onclick="promptNumberAndBuy('1GB', 99)">Select</button>
+                    <p>2.5GB for Ksh 300 (7day)</p>
+                    <button onclick="promptNumberAndBuy('2.5GB', 300)">Select</button> 
+                    <p>6GB for Ksh 700 (7day)</p>
+                    <button onclick="promptNumberAndBuy('6GB', 700)">Select</button>
+              </div>
+          </section>
+          <section id="sms">
+               <h3>SMS (Multiple purchases allowed per day)</h3>
+               <div class="package">
+                    <p>20 SMS for Ksh 5 (24hr)</p>
+                    <button onclick="promptNumberAndBuy('20 SMS', 5)">Select</button>
+                    <p>200 SMS for Ksh 10 (24hr)</p>
+                    <button onclick="promptNumberAndBuy('200 SMS', 10)">Select</button>
+                    <p>1000 SMS for Ksh 30 (7day)</p>
+                    <button onclick="promptNumberAndBuy('1000 SMS', 30)">Select</button>
+               </div>
+          </section>
+          <section id="minutes">
+               <h4>Minutes (Multiple purchases allowed per day)</h4>
+               <div class="package">
+                    <p>30 Mins for Ksh 21 (3hr)</p>
+                    <button onclick="promptNumberAndBuy('30 Mins', 21)">Select</button>
+                    <p>50 Mins for Ksh 51 (3hr)</p>
+                    <button onclick="promptNumberAndBuy('50 Mins', 51)">Select</button>
+               </div>
+          </section>
+     </main>
+     <section id="contacts">
+          <h2>Contact Us</h2>
+          <p>Phone: +254729323385</p>
+          <p>Email: ropbrian254@gmail.com</p>
+          <p>Facebook: Brayo Montana</a></p>
+     </section>
+     <script>async function promptNumberAndBuy(packageName, packagePrice) {
+    let phoneNumber = prompt("Enter the phone number you are paying with (e.g., 2547XXXXXXXX):");
+    if (!phoneNumber || phoneNumber.length < 10 || isNaN(phoneNumber)) {
+        alert("Invalid phone number. Please enter a valid number.");
+        return;
+    }
+
+    alert("A payment request has been sent to your phone. Please enter your PIN to complete the purchase.");
+
+    try {
+        let response = await fetch("http://localhost:3000/stkpush", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                phone: phoneNumber,
+                amount: packagePrice
+            })
+        });
+
+        let result = await response.json();
+
+        if (result.success) {
+            alert("Payment successful! " + packageName + " purchased for " + phoneNumber);
+        } else {
+            alert("Payment failed. Please try again.");
+        }
+    } catch (error) {
+        console.error(error);
+        alert("Error processing payment.");
+    }
+}
+</script>
+</body>
+</html>
