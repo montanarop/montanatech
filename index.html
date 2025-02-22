@@ -10,12 +10,15 @@
      <header>
           <div class="header-container">
                <img src="saf logo.jpg" alt="Montana Tech Logo" class="logo">
-               <div>
+               <div class="title-container">
                     <h1>Montana Tech Bingwa Services</h1>
                     <p class="subtitle">Pata Offer Hata Hukiwa na Okoa</p>
                </div>
           </div>
      </header>
+
+     <button class="help-btn" onclick="openHelp()">Help</button>
+
      <main>
           <section id="announcements">
                <h2>Announcements</h2>
@@ -45,6 +48,7 @@
                     <button onclick="promptNumberAndBuy('6GB', 700)">Select</button>
               </div>
           </section>
+
           <section id="sms">
                <h3>SMS (Multiple purchases allowed per day)</h3>
                <div class="package">
@@ -56,6 +60,7 @@
                     <button onclick="promptNumberAndBuy('1000 SMS', 30)">Select</button>
                </div>
           </section>
+
           <section id="minutes">
                <h4>Minutes (Multiple purchases allowed per day)</h4>
                <div class="package">
@@ -66,43 +71,66 @@
                </div>
           </section>
      </main>
+
      <section id="contacts">
           <h2>Contact Us</h2>
           <p>Phone: +254729323385</p>
           <p>Email: ropbrian254@gmail.com</p>
           <p>Facebook: Brayo Montana</a></p>
      </section>
-     <script>async function promptNumberAndBuy(packageName, packagePrice) {
-    let phoneNumber = prompt("Enter the phone number you are paying with (e.g., 2547XXXXXXXX):");
-    if (!phoneNumber || phoneNumber.length < 10 || isNaN(phoneNumber)) {
-        alert("Invalid phone number. Please enter a valid number.");
-        return;
-    }
 
-    alert("A payment request has been sent to your phone. Please enter your PIN to complete the purchase.");
+     <div id="help-popup" class="help-popup">
+          <div class="help-content">
+               <span class="close-btn" onclick="closeHelp()">&times;</span>
+               <h2>How to Use Montana Tech Bingwa Services</h2>
+               <p>1️⃣ Click on the package you want to purchase.</p>
+               <p>2️⃣ Enter your phone number when prompted.</p>
+               <p>3️⃣ Confirm and complete the payment request on your phone.</p>
+               <p>4️⃣ You will receive a confirmation message once successful.</p>
+          </div>
+     </div>
 
-    try {
-        let response = await fetch("https://mpesa-backend.onrender.com/stkpush", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                phone: phoneNumber,
-                amount: packagePrice
-            })
-        });
+     <!-- JavaScript Section -->
+     <script>
+         function openHelp() {
+             document.getElementById("help-popup").style.display = "block";
+         }
 
-        let result = await response.json();
+         function closeHelp() {
+             document.getElementById("help-popup").style.display = "none";
+         }
 
-        if (result.success) {
-            alert("Payment successful! " + packageName + " purchased for " + phoneNumber);
-        } else {
-            alert("Payment failed. Please try again.");
-        }
-    } catch (error) {
-        console.error(error);
-        alert("Error processing payment.");
-    }
-}
-</script>
+         async function promptNumberAndBuy(packageName, packagePrice) {
+             let phoneNumber = prompt("Enter the phone number you are paying with (e.g., 2547XXXXXXXX):");
+             if (!phoneNumber || phoneNumber.length < 10 || isNaN(phoneNumber)) {
+                 alert("Invalid phone number. Please enter a valid number.");
+                 return;
+             }
+
+             alert("A payment request has been sent to your phone. Please enter your PIN to complete the purchase.");
+
+             try {
+                 let response = await fetch("https://mpesa-backend.onrender.com/stkpush", {
+                     method: "POST",
+                     headers: { "Content-Type": "application/json" },
+                     body: JSON.stringify({
+                         phone: phoneNumber,
+                         amount: packagePrice
+                     })
+                 });
+
+                 let result = await response.json();
+
+                 if (result.success) {
+                     alert("Payment successful! " + packageName + " purchased for " + phoneNumber);
+                 } else {
+                     alert("Payment failed. Please try again.");
+                 }
+             } catch (error) {
+                 console.error(error);
+                 alert("Error processing payment.");
+             }
+         }
+     </script>
 </body>
 </html>

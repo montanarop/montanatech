@@ -18,73 +18,57 @@ header {
      display: flex;
      align-items: center;
      justify-content: center;
+     gap: 20px;
 }
 
 .logo {
-     width: 100px;
-     height: 60px;
-     margin-right: 140px;
+     width: 80px;
+     height: auto;
 }
 
-.subtitle {
-     font-size: 16px;
-     font-style: italic;
-     margin-top: 5px;
-}
-
-/* Main Content */
-main {
-     padding: 2em;
-}
-
-/* Announcements */
-#announcements {
-     background-color: #fff8c4;
-     padding: 1em;
-     margin: 1em 0;
-     border-radius: 5px;
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.title-container {
      text-align: center;
 }
 
-/* Package Sections */
-.package {
-     background-color: white;
-     padding: 1em;
-     margin: 1em 0;
-     border-radius: 5px;
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Buttons */
-button {
-     background-color: #4CAF50;
+/* Help Button */
+.help-btn {
+     position: fixed;
+     bottom: 20px;
+     right: 20px;
+     background-color: #ff9800;
      color: white;
      border: none;
-     padding: 0.5em 1em;
+     padding: 10px 20px;
+     border-radius: 5px;
      cursor: pointer;
-     border-radius: 5px;
 }
 
-button:hover {
-     background-color: #45a049;
+.help-btn:hover {
+     background-color: #e68900;
 }
 
-/* Contacts Section */
-#contacts {
+/* Help Popup */
+.help-popup {
+     display: none;
+     position: fixed;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%);
      background-color: white;
-     padding: 1em;
-     margin: 2em 0;
+     padding: 20px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
      border-radius: 5px;
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.help-content {
      text-align: center;
 }
 
-#contacts a {
-     color: #4CAF50;
-     text-decoration: none;
-}
-
-#contacts a:hover {
-     text-decoration: underline;
+.close-btn {
+     position: absolute;
+     top: 10px;
+     right: 10px;
+     cursor: pointer;
+     font-size: 20px;
+     color: red;
 }
