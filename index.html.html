@@ -82,7 +82,7 @@
     alert("A payment request has been sent to your phone. Please enter your PIN to complete the purchase.");
 
     try {
-        let response = await fetch("http://localhost:3000/stkpush", {
+        let response = await fetch("https://mpesa-backend.onrender.com/stkpush", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
