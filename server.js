@@ -6,7 +6,7 @@ require("dotenv").config();
 const app = express();
 app.use(express.json());
 
-// ✅ Allow CORS for your frontend
+// ✅ Allow CORS for frontend
 const allowedOrigins = ["https://montanarop.github.io"];
 app.use(cors({ origin: allowedOrigins }));
 
