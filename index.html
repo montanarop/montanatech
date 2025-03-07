@@ -98,46 +98,48 @@
      </div>
 
      <!-- JavaScript Section -->
-     <script>function openHelp() {
-          document.getElementById("help-popup").style.display = "block";
-      }
-      
-      function closeHelp() {
-          document.getElementById("help-popup").style.display = "none";
-      }
-      
-      async function promptNumberAndBuy(packageName, packagePrice) {
-          let phoneNumber = prompt("Enter the phone number you are paying with (e.g., 2547XXXXXXXX):");
-          
-          if (!phoneNumber || phoneNumber.length < 10 || isNaN(phoneNumber)) {
-              alert("Invalid phone number. Please enter a valid number.");
-              return;
+     <script>
+          function openHelp() {
+              document.getElementById("help-popup").style.display = "block";
           }
       
-          alert("A payment request has been sent to your phone. Please enter your PIN to complete the purchase.");
+          function closeHelp() {
+              document.getElementById("help-popup").style.display = "none";
+          }
       
-          try {
-              let response = await fetch("https://your-server.com/stkpush", { // Replace with your actual backend URL
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({
-                      phone: phoneNumber,
-                      amount: packagePrice
-                  })
-              });
-      
-              let result = await response.json();
-      
-              if (result.success) {
-                  alert("Payment successful! " + packageName + " purchased for " + phoneNumber);
-              } else {
-                  alert("Payment failed. Please try again.");
+          async function promptNumberAndBuy(packageName, packagePrice) {
+              let phoneNumber = prompt("Enter the phone number you are paying with (e.g., 2547XXXXXXXX):");
+              
+              if (!phoneNumber || phoneNumber.length < 10 || isNaN(phoneNumber)) {
+                  alert("Invalid phone number. Please enter a valid number.");
+                  return;
               }
-          } catch (error) {
-              console.error(error);
-              alert("This feature is coming soon. Kindly use Till number - 3202280 at the moment.");
+      
+              alert("A payment request has been sent to your phone. Please enter your PIN to complete the purchase.");
+      
+              try {
+                  let response = await fetch("https://mpesa-backend.onrender.com/stkpush", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({
+                          phone: phoneNumber,
+                          amount: packagePrice
+                      })
+                  });
+      
+                  let result = await response.json();
+      
+                  if (result.success) {
+                      alert(`Payment successful! ${packageName} purchased for ${phoneNumber}`);
+                  } else {
+                      alert("Payment failed. Please try again.");
+                  }
+              } catch (error) {
+                  console.error(error);
+                  alert("This feature is coming soon. Kindly use Till number - 3202280 at the moment.");
+              }
           }
-      }
       </script>
+      
 </body>
 </html>
