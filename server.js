@@ -15,8 +15,7 @@ const PORT = process.env.PORT || 3000; // Use environment port if available
 // ✅ Safaricom Daraja API Credentials
 const { CONSUMER_KEY, CONSUMER_SECRET, PASSKEY } = process.env;
 const SHORTCODE = "3202280"; // Your Till Number
-const CALLBACK_URL = "const CALLBACK_URL = https://montanatech.onrender.com/callback";
-; // Replace with actual callback URL
+const CALLBACK_URL = "https://montanatech.onrender.com/callback"; // Replace with actual callback URL
 
 // ✅ Function to get M-Pesa access token
 async function getAccessToken() {
