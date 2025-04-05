@@ -24,7 +24,6 @@
     <main>
         <h2 class="section-title">✅ Bundles (Purchase only once a day)</h2>
         <div class="package-container">
-            <!-- Daily bundles packages here -->
             <div class="package-card daily-bundle">
                 <div class="package-header">
                     <span>1.25GB</span>
@@ -41,12 +40,112 @@
                     </button>
                 </div>
             </div>
-            <!-- More daily packages... -->
+            
+            <div class="package-card daily-bundle">
+                <div class="package-header">
+                    <span>1.5GB</span>
+                    <span class="package-price">Sh50</span>
+                </div>
+                <div class="package-body">
+                    <div class="package-details">
+                        <p>Valid for 3 hours</p>
+                        <p>High speed data</p>
+                        <p>Once per day</p>
+                    </div>
+                    <button class="buy-btn" onclick="promptNumberAndBuy('1.5GB for 3hrs', 50)">
+                        <i>💳</i> BUY NOW
+                    </button>
+                </div>
+            </div>
+            
+            <div class="package-card daily-bundle">
+                <div class="package-header">
+                    <span>350MB</span>
+                    <span class="package-price">Sh49</span>
+                </div>
+                <div class="package-body">
+                    <div class="package-details">
+                        <p>Weekly bundle</p>
+                        <p>7 days validity</p>
+                        <p>Once per day</p>
+                    </div>
+                    <button class="buy-btn" onclick="promptNumberAndBuy('350MB weekly', 49)">
+                        <i>💳</i> BUY NOW
+                    </button>
+                </div>
+            </div>
+            
+            <div class="package-card daily-bundle">
+                <div class="package-header">
+                    <span>1GB</span>
+                    <span class="package-price">Sh19</span>
+                </div>
+                <div class="package-body">
+                    <div class="package-details">
+                        <p>Valid for 1 hour</p>
+                        <p>High speed data</p>
+                        <p>Once per day</p>
+                    </div>
+                    <button class="buy-btn" onclick="promptNumberAndBuy('1GB for 1hr', 19)">
+                        <i>💳</i> BUY NOW
+                    </button>
+                </div>
+            </div>
+            
+            <div class="package-card daily-bundle">
+                <div class="package-header">
+                    <span>250MB</span>
+                    <span class="package-price">Sh20</span>
+                </div>
+                <div class="package-body">
+                    <div class="package-details">
+                        <p>24 hours validity</p>
+                        <p>Standard speed</p>
+                        <p>Once per day</p>
+                    </div>
+                    <button class="buy-btn" onclick="promptNumberAndBuy('250MB for 24hr', 20)">
+                        <i>💳</i> BUY NOW
+                    </button>
+                </div>
+            </div>
+            
+            <div class="package-card daily-bundle">
+                <div class="package-header">
+                    <span>1GB</span>
+                    <span class="package-price">Sh99</span>
+                </div>
+                <div class="package-body">
+                    <div class="package-details">
+                        <p>24 hours validity</p>
+                        <p>High speed data</p>
+                        <p>Once per day</p>
+                    </div>
+                    <button class="buy-btn" onclick="promptNumberAndBuy('1GB for 24hr', 99)">
+                        <i>💳</i> BUY NOW
+                    </button>
+                </div>
+            </div>
+            
+            <div class="package-card daily-bundle">
+                <div class="package-header">
+                    <span>1GB + 1GB Free</span>
+                    <span class="package-price">Sh25</span>
+                </div>
+                <div class="package-body">
+                    <div class="package-details">
+                        <p>Valid for 1 hour</p>
+                        <p>2GB total data</p>
+                        <p>Once per day</p>
+                    </div>
+                    <button class="buy-btn" onclick="promptNumberAndBuy('1GB + 1GB free for 1hr', 25)">
+                        <i>💳</i> BUY NOW
+                    </button>
+                </div>
+            </div>
         </div>
         
         <h2 class="section-title">✨ Bundles (Purchase many times)</h2>
         <div class="package-container">
-            <!-- Multi-purchase packages here -->
             <div class="package-card multi-bundle">
                 <div class="package-header">
                     <span>1GB</span>
@@ -63,11 +162,132 @@
                     </button>
                 </div>
             </div>
-            <!-- More multi-purchase packages... -->
+            
+            <div class="package-card multi-bundle">
+                <div class="package-header">
+                    <span>1.5GB</span>
+                    <span class="package-price">Sh52</span>
+                </div>
+                <div class="package-body">
+                    <div class="package-details">
+                        <p>Valid for 3 hours</p>
+                        <p>High speed data</p>
+                        <p>Multiple purchases</p>
+                    </div>
+                    <button class="buy-btn" onclick="promptNumberAndBuy('1.5GB for 3hr (multi)', 52)">
+                        <i>💳</i> BUY NOW
+                    </button>
+                </div>
+            </div>
+            
+            <div class="package-card multi-bundle">
+                <div class="package-header">
+                    <span>2GB</span>
+                    <span class="package-price">Sh110</span>
+                </div>
+                <div class="package-body">
+                    <div class="package-details">
+                        <p>24 hours validity</p>
+                        <p>High speed data</p>
+                        <p>Multiple purchases</p>
+                    </div>
+                    <button class="buy-btn" onclick="promptNumberAndBuy('2GB for 24hr (multi)', 110)">
+                        <i>💳</i> BUY NOW
+                    </button>
+                </div>
+            </div>
         </div>
         
-        <!-- SMS and Minutes sections... -->
-
+        <h2 class="section-title">📱 SMS (Multiple purchases accepted)</h2>
+        <div class="package-container">
+            <div class="package-card sms-bundle">
+                <div class="package-header">
+                    <span>20 SMS</span>
+                    <span class="package-price">Sh5</span>
+                </div>
+                <div class="package-body">
+                    <div class="package-details">
+                        <p>24 hours validity</p>
+                        <p>All networks</p>
+                        <p>Multiple purchases</p>
+                    </div>
+                    <button class="buy-btn" onclick="promptNumberAndBuy('20 SMS for 24hr', 5)">
+                        <i>💳</i> BUY NOW
+                    </button>
+                </div>
+            </div>
+            
+            <div class="package-card sms-bundle">
+                <div class="package-header">
+                    <span>200 SMS</span>
+                    <span class="package-price">Sh10</span>
+                </div>
+                <div class="package-body">
+                    <div class="package-details">
+                        <p>24 hours validity</p>
+                        <p>All networks</p>
+                        <p>Multiple purchases</p>
+                    </div>
+                    <button class="buy-btn" onclick="promptNumberAndBuy('200 SMS for 24hr', 10)">
+                        <i>💳</i> BUY NOW
+                    </button>
+                </div>
+            </div>
+            
+            <div class="package-card sms-bundle">
+                <div class="package-header">
+                    <span>1000 SMS</span>
+                    <span class="package-price">Sh30</span>
+                </div>
+                <div class="package-body">
+                    <div class="package-details">
+                        <p>7 days validity</p>
+                        <p>All networks</p>
+                        <p>Multiple purchases</p>
+                    </div>
+                    <button class="buy-btn" onclick="promptNumberAndBuy('1000 SMS for 7day', 30)">
+                        <i>💳</i> BUY NOW
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="section-title">📞 Minutes (Multiple purchase accepted)</h2>
+        <div class="package-container">
+            <div class="package-card minutes-bundle">
+                <div class="package-header">
+                    <span>45 Minutes</span>
+                    <span class="package-price">Sh21</span>
+                </div>
+                <div class="package-body">
+                    <div class="package-details">
+                        <p>Valid for 3 hours</p>
+                        <p>All networks</p>
+                        <p>Multiple purchases</p>
+                    </div>
+                    <button class="buy-btn" onclick="promptNumberAndBuy('45 Mins for 3hr', 21)">
+                        <i>💳</i> BUY NOW
+                    </button>
+                </div>
+            </div>
+            
+            <div class="package-card minutes-bundle">
+                <div class="package-header">
+                    <span>50 Minutes</span>
+                    <span class="package-price">Sh51</span>
+                </div>
+                <div class="package-body">
+                    <div class="package-details">
+                        <p>Till midnight</p>
+                        <p>All networks</p>
+                        <p>Multiple purchases</p>
+                    </div>
+                    <button class="buy-btn" onclick="promptNumberAndBuy('50 Mins till midnight', 51)">
+                        <i>💳</i> BUY NOW
+                    </button>
+                </div>
+            </div>
+        </div>
     </main>
 
     <div class="help-btn" onclick="openHelp()">?</div>
@@ -79,9 +299,9 @@
             <div class="help-steps">
                 <p><span>1️⃣</span> Click on the package you want to purchase</p>
                 <p><span>2️⃣</span> Enter your phone number when prompted</p>
-                <p><span>3️⃣</span> Confirm and complete the payment request</p>
-                <p><span>4️⃣</span> You'll receive confirmation via SMS</p>
-                <p><span>ℹ️</span> All payments go to Till: <strong>3202280</strong></p>
+                <p><span>3️⃣</span> Confirm and complete the payment request on your phone</p>
+                <p><span>4️⃣</span> You will receive a confirmation message once successful</p>
+                <p><span>ℹ️</span> All payments go to Till number: <strong>3202280</strong></p>
             </div>
         </div>
     </div>
@@ -104,50 +324,65 @@
             btn.textContent = btn.textContent === 'Switch to English' 
                 ? 'Badilisha kwa Kiswahili' 
                 : 'Switch to English';
-            // Add full translation logic if needed
+            // Add full language switching logic here
         }
         
         // Payment processing
         async function promptNumberAndBuy(packageName, packagePrice) {
-            const phoneNumber = prompt("Enter your Safaricom number (2547XXXXXXXX):");
+            const phoneNumber = prompt("Enter your Safaricom phone number (e.g., 2547XXXXXXXX):");
             
-            if (!phoneNumber || !/^2547\d{8}$/.test(phoneNumber)) {
-                showNotification("Please enter valid Safaricom number");
+            if (!phoneNumber || phoneNumber.length < 10 || isNaN(phoneNumber)) {
+                showNotification("Please enter a valid phone number");
                 return;
             }
             
-            showNotification(`Processing Ksh ${packagePrice} for ${packageName}...`);
+            showNotification(`Processing payment of Ksh ${packagePrice} for ${packageName}...`);
             
             try {
-                // Simulate payment processing (replace with actual API call)
+                // Simulate payment processing (replace with actual M-Pesa API call)
                 setTimeout(() => {
-                    showNotification(`✅ ${packageName} activated for ${phoneNumber}`);
+                    showNotification(`Success! ${packageName} activated for ${phoneNumber}. Check your SMS.`);
                     
-                    /* Actual implementation would be:
-                    const response = await fetch('your-backend-api', {
+                    // In a real implementation, you would call your backend:
+                    /*
+                    const response = await fetch('https://your-backend.com/mpesa-payment', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
                             phone: phoneNumber,
                             amount: packagePrice,
+                            package: packageName,
                             till: '3202280'
                         })
                     });
+                    
+                    const result = await response.json();
+                    if (result.success) {
+                        showNotification(`Success! ${packageName} activated for ${phoneNumber}`);
+                    } else {
+                        showNotification("Payment failed. Please try again.");
+                    }
                     */
-                }, 1500);
+                }, 2000);
+                
             } catch (error) {
-                showNotification("❌ Payment failed. Please try again");
+                showNotification("Payment failed. Please try again later.");
                 console.error("Payment error:", error);
             }
         }
         
+        // Notification system
         function showNotification(message) {
             const notification = document.getElementById('notification');
             notification.textContent = message;
             notification.style.display = 'block';
-            setTimeout(() => notification.style.display = 'none', 5000);
+            
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 5000);
         }
         
+        // Help popup
         function openHelp() {
             document.getElementById('help-popup').style.display = 'flex';
         }
@@ -156,6 +391,7 @@
             document.getElementById('help-popup').style.display = 'none';
         }
         
+        // Close help when clicking outside
         window.addEventListener('click', (e) => {
             if (e.target === document.getElementById('help-popup')) {
                 closeHelp();
